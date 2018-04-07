@@ -11,7 +11,7 @@ class Types::QueryType < Types::BaseObject
   field :user, Types::UserType, null: true do
     argument :id, Int, required: true
   end
-  field :viewer, Types::UserType, null: true
+  field :viewer, Types::UserType, null: true, guard: ->(obj, args, ctx) { ctx[:current_user] }
 
   def test_field
     "Hello World!"
