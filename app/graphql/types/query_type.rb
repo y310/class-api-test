@@ -17,7 +17,7 @@ class Types::QueryType < Types::BaseObject
     Post.all
   end
 
-  def post(id)
+  def post(id:)
     Post.find(id)
   end
 end
