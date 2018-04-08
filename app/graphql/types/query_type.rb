@@ -26,10 +26,10 @@ class Types::QueryType < Types::BaseObject
   end
 
   def posts
-    Post.all
+    Post.published.all
   end
 
   def post(id:)
-    Post.find(id)
+    Post.published.find(id)
   end
 end
