@@ -1,6 +1,9 @@
 class Types::UserType < Types::BaseObject
+  implements GraphQL::Relay::Node.interface
+
   description 'User object'
 
+  global_id_field :id
   field :name, String, null: false
 
   field :posts, Types::PostType.connection_type, null: false

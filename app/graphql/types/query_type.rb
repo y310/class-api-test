@@ -1,9 +1,6 @@
 class Types::QueryType < Types::BaseObject
-  # Add root-level fields here.
-  # They will be entry points for queries on your schema.
-
-  # TODO: remove me
-  field :test_field, String, description: "An example field added by the generator", null: true
+  field :node, field: GraphQL::Relay::Node.field
+  field :nodes, field: GraphQL::Relay::Node.plural_field
   field :posts, Types::PostType.connection_type, null: false
   field :post, Types::PostType, null: true do
     argument :id, Int, required: true
