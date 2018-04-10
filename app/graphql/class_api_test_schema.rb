@@ -4,11 +4,11 @@ class ClassApiTestSchema < GraphQL::Schema
   use GraphQL::Guard.new
 
   rescue_from GraphQL::Guard::NotAuthorizedError do |exception|
-    "Not authorized: #{exception.message}"
+    ErrorWithCode.new("Not authorized: #{exception.message}", 'E001')
   end
 
   rescue_from ActiveRecord::RecordNotFound do |exception|
-    exception.message
+    ErrorWithCode.new(exception.message, 'E002')
   end
 
   def self.object_from_id(unique_id, context)
