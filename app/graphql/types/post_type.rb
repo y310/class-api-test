@@ -7,6 +7,6 @@ class Types::PostType < Types::BaseObject
   field :body, String, null: true
   field :createdAt, Types::DateTime, null: false
 
-  field :user, Types::UserType, null: false
-  field :comments, Types::CommentType.connection_type, null: false
+  field :user, Types::UserType, null: false, complexity: 5
+  field :comments, Types::CommentType.connection_type, null: false, complexity: 5
 end
