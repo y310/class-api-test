@@ -4,7 +4,7 @@ class ClassApiTestSchema < GraphQL::Schema
   use GraphQL::Guard.new
 
   max_depth 10
-  max_complexity 100
+  max_complexity 500
 
   rescue_from GraphQL::Guard::NotAuthorizedError do |exception|
     ErrorWithCode.new("Not authorized: #{exception.message}", 'E001')
