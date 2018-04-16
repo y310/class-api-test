@@ -35,6 +35,8 @@ gem 'graphql-guard'
 
 gem 'draper'
 
+gem 'webpacker'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
