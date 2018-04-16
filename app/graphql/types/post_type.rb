@@ -1,4 +1,5 @@
 class Types::PostType < Types::BaseObject
+  decorated true
   implements GraphQL::Relay::Node.interface
   description 'Post object'
 
