@@ -1,6 +1,6 @@
 class ClassApiTestSchema < GraphQL::Schema
-  mutation(Types::MutationType)
-  query(Types::QueryType)
+  mutation(Types::Objects::MutationType)
+  query(Types::Objects::QueryType)
   use GraphQL::Guard.new
 
   max_depth 10
@@ -26,11 +26,11 @@ class ClassApiTestSchema < GraphQL::Schema
   def self.resolve_type(type, obj, ctx)
     case obj
     when User
-      Types::UserType
+      Types::Objects::UserType
     when Post
-      Types::PostType
+      Types::Objects::PostType
     when Comment
-      Types::CommentType
+      Types::Objects::CommentType
     else
       raise NotImplementedError, obj
     end

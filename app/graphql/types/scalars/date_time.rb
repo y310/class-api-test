@@ -1,4 +1,4 @@
-class Types::DateTime < Types::BaseScalar
+class Types::Scalars::DateTime < Types::Scalars::BaseScalar
   description 'ISO8601フォーマットの日時データ'
 
   def self.coerce_input(input_value, context)

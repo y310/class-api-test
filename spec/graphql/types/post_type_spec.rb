@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe Types::PostType do
+RSpec.describe Types::Objects::PostType do
   def resolve(type, field, obj, args = {}, ctx = {})
     ClassApiTestSchema.types[type].fields[field].resolve(obj, args, ctx)
   end

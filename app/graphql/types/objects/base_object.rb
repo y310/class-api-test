@@ -1,4 +1,4 @@
-class Types::BaseObject < GraphQL::Schema::Object
+class Types::Objects::BaseObject < GraphQL::Schema::Object
   field_class AuthorizedField
   accepts_definition :guard
 
