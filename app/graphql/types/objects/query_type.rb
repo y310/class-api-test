@@ -5,21 +5,13 @@ class Types::Objects::QueryType < Types::Objects::BaseObject
   field :post, Types::Objects::PostType, null: true do
     argument :id, Int, required: true
   end
-  field :user, Types::Objects::UserType, null: true do
+  field :user, Types::Objects::UserType, null: true, function: Types::Functions::Query::UserField.new do
     argument :id, Int, required: true
   end
-  field :viewer, Types::Objects::UserType, null: true, guard: ->(obj, args, ctx) { ctx[:current_user] }
+  field :viewer, Types::Objects::UserType, null: true, guard: ->(obj, args, ctx) { ctx[:current_user] }, function: Types::Functions::Query::ViewerField.new
 
   def test_field
     "Hello World!"
-  end
-
-  def viewer
-    context[:current_user]
-  end
-
-  def user(id:)
-    User.find(id)
   end
 
   def posts
