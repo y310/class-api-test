@@ -48,6 +48,7 @@ group :development, :test do
   gem 'selenium-webdriver'
   gem 'parser'
   gem 'rspec-rails'
+  gem 'pry-byebug'
 end
 
 group :development do
