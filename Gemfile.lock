@@ -89,6 +89,9 @@ GEM
     graphiql-rails (1.4.10)
       railties
       sprockets-rails
+    graphql-batch (0.3.9)
+      graphql (>= 0.8, < 2)
+      promise.rb (~> 0.7.2)
     graphql-guard (1.0.0)
       graphql (>= 1.6.0, < 2)
     i18n (1.0.0)
@@ -115,6 +118,7 @@ GEM
       mini_portile2 (~> 2.3.0)
     parser (2.5.0.4)
       ast (~> 2.4.0)
+    promise.rb (0.7.4)
     pry (0.11.3)
       coderay (~> 1.1.0)
       method_source (~> 0.9.0)
@@ -238,6 +242,7 @@ DEPENDENCIES
   draper
   graphiql-rails
   graphql!
+  graphql-batch
   graphql-guard
   jbuilder (~> 2.5)
   listen (>= 3.0.5, < 3.2)

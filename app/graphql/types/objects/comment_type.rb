@@ -6,4 +6,8 @@ class Types::Objects::CommentType < Types::Objects::BaseObject
   field :message, String, null: false
   field :user, Types::Objects::UserType, null: false
   field :post, Types::Objects::PostType, null: false
+
+  def user
+    Loaders::RecordLoader.for(User).load(object.user_id)
+  end
 end

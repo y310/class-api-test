@@ -32,6 +32,7 @@ gem 'jbuilder', '~> 2.5'
 
 gem 'graphql', github: 'rmosolgo/graphql-ruby'
 gem 'graphql-guard'
+gem 'graphql-batch'
 
 gem 'draper'
 

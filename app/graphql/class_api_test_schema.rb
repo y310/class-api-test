@@ -2,6 +2,7 @@ class ClassApiTestSchema < GraphQL::Schema
   mutation(Types::Objects::MutationType)
   query(Types::Objects::QueryType)
   use GraphQL::Guard.new
+  use GraphQL::Batch
 
   max_depth 10
   max_complexity 500

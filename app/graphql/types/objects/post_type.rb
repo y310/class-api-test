@@ -15,6 +15,10 @@ class Types::Objects::PostType < Types::Objects::BaseObject
   field :user, Types::Objects::UserType, null: false, complexity: 5
   field :comments, Types::Objects::CommentType.connection_type, null: false, complexity: 5
 
+  def user
+    Loaders::RecordLoader.for(User).load(object.user_id)
+  end
+
   def argument_test(flag:)
     flag
   end
