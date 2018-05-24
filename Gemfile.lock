@@ -1,8 +1,8 @@
 GIT
   remote: https://github.com/rmosolgo/graphql-ruby.git
-  revision: fb040d08a48f5db5c2db95ccd1672e08130030f3
+  revision: 676cc2090f799cc136d5d3e98eb2293a055cb89e
   specs:
-    graphql (1.8.0.pre10)
+    graphql (1.8.0)
 
 GEM
   remote: https://rubygems.org/
