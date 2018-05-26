@@ -4,6 +4,8 @@ class ClassApiTestSchema < GraphQL::Schema
   use GraphQL::Guard.new
   use GraphQL::Batch
 
+  query_analyzer Analyzers::RelayConnectionFirstLastRequired.new
+
   max_depth 10
   max_complexity 500
 
