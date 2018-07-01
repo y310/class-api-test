@@ -30,7 +30,7 @@ gem 'jbuilder', '~> 2.5'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
-gem 'graphql', github: 'rmosolgo/graphql-ruby'
+gem 'graphql'
 gem 'graphql-guard'
 gem 'graphql-batch'
 
