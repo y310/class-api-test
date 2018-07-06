@@ -1,7 +1,9 @@
 class Types::Objects::QueryType < Types::Objects::BaseObject
   field :node, field: GraphQL::Relay::Node.field
   field :nodes, field: GraphQL::Relay::Node.plural_field
-  field :posts, Types::Objects::PostType.connection_type, null: false
+  field :posts, Types::Objects::PostType.connection_type, null: false do
+    argument :status, Types::Enums::PostStatusEnum, required: false, default_value: 'PUBLISHED'
+  end
   field :post, Types::Objects::PostType, null: true do
     argument :id, Int, required: true
   end
@@ -14,8 +16,13 @@ class Types::Objects::QueryType < Types::Objects::BaseObject
     "Hello World!"
   end
 
-  def posts
-    Post.published.all
+  def posts(status:)
+    case status
+    when 'PUBLISHED'
+      Post.published
+    when 'DRAFT'
+      Post.draft
+    end
   end
 
   def post(id:)
