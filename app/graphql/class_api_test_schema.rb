@@ -4,6 +4,16 @@ class ClassApiTestSchema < GraphQL::Schema
   use GraphQL::Guard.new
   use GraphQL::Batch
 
+  log_query_depth = GraphQL::Analysis::QueryDepth.new { |query, depth|
+    query.context[:query_depth] = depth
+  }
+
+  log_query_complexity = GraphQL::Analysis::QueryComplexity.new { |query, complexity|
+    query.context[:query_complexity] = complexity
+  }
+
+  query_analyzer log_query_depth
+  query_analyzer log_query_complexity
   query_analyzer Analyzers::RelayConnectionFirstLastRequired.new
 
   max_depth 10
